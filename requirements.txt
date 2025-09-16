@@ -1,0 +1,30 @@
+
+# main
+pre-commit>=4.2.0
+python-dotenv>=1.0.1
+requests>=2.32.3
+toml>=0.10.2
+tqdm>=4.64.1
+coloredlogs>=15.0.1
+jinja2>=3.1.2
+tabulate>=0.9.0
+
+# extra
+numpy>=2.2.6
+natsort>=8.4.0
+pillow>=11.2.1
+matplotlib>=3.10.3
+influxdb-client>=1.49.0
+pyelftools>=0.32
+
+# documentation
+mkdocs>=1.6.1
+# mkdocs-material>=9.5.39
+# mkdocs-roamlinks-plugin>=0.3.2
+# mkdocs-callouts>=1.4.0
+# mkdocs-custom-tags-attributes>=0.3.3
+# mkdocs-obsidian-bridge>=1.1.1
+# mkdocs-mermaid2-plugin>=1.1.1
+# mkdocs-drawio-file>=1.5.2
+# mkdoxy>=1.2.4
+# mkdocs-simple-plugin>=3.2.0

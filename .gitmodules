@@ -1,0 +1,4 @@
+[submodule "thirdparty/wsh-shell"]
+	path = thirdparty/wsh-shell
+	url = https://github.com/whoosh-bike/wsh-shell.git
+	branch = dev

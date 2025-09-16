@@ -1,0 +1,129 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🟡🟢 | m0 STLink launch",
+            "presentation": {
+                "group": "Local"
+            },
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${workspaceFolder}/debug/fw.elf",
+            "svdFile": "${workspaceFolder}/platform/m0/stm32h7x3.svd",
+            "gdbPath": "{{ GDB_PATH }}",
+            "showDevDebugOutput": "raw",
+            "servertype": "stlink",
+            "interface": "swd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
+            "name": "🟡🟢 | m0 JLink launch",
+            "presentation": {
+                "group": "Local"
+            },
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${workspaceFolder}/debug/fw.elf",
+            "svdFile": "${workspaceFolder}/platform/m0/stm32h7x3.svd",
+            "gdbPath": "{{ GDB_PATH }}",
+            "showDevDebugOutput": "raw",
+            "servertype": "jlink",
+            "serverpath": "{{ JLINK_SERVER_PATH }}",
+            "device": "STM32H743XI",
+            "serialNumber": "{{ JLINK_SERIAL_NUMBER }}",
+            "interface": "swd"
+        },
+        {
+            "name": "🟡🟢 | m0 JLink attach",
+            "presentation": {
+                "group": "Local"
+            },
+            "type": "cortex-debug",
+            "request": "attach",
+            "executable": "${workspaceFolder}/debug/fw.elf",
+            "svdFile": "${workspaceFolder}/platform/m0/stm32h7x3.svd",
+            "gdbPath": "{{ GDB_PATH }}",
+            "showDevDebugOutput": "raw",
+            "servertype": "jlink",
+            "serverpath": "{{ JLINK_SERVER_PATH }}",
+            "device": "STM32H743XI",
+            "serialNumber": "{{ JLINK_SERIAL_NUMBER }}",
+            "interface": "swd"
+        },
+        {
+            "name": "🟡🟢 | m0 OpenOCD-STLink launch",
+            "presentation": {
+                "group": "Local"
+            },
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${workspaceFolder}/debug/fw.elf",
+            "svdFile": "${workspaceFolder}/platform/m0/stm32h7x3.svd",
+            "gdbPath": "{{ GDB_PATH }}",
+            "showDevDebugOutput": "raw",
+            "servertype": "openocd",
+            "serverpath": "{{ OPENOCD_PATH }}",
+            "interface": "swd",
+            "configFiles": [
+                "${workspaceFolder}/platform/stlink.cfg",
+                "${workspaceFolder}/platform/m0/stm32h7x.cfg"
+            ],
+            "preLaunchCommands": [
+                "monitor init",
+                "monitor reset init",
+                "monitor flash write_image debug/fw.elf"
+            ]
+        },
+        {
+            "name": "🟡🟢 | m0 OpenOCD-CMSIS-Dap launch",
+            "presentation": {
+                "group": "Local"
+            },
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${workspaceFolder}/debug/fw.elf",
+            "svdFile": "${workspaceFolder}/platform/m0/stm32h7x3.svd",
+            "gdbPath": "{{ GDB_PATH }}",
+            "showDevDebugOutput": "raw",
+            "servertype": "openocd",
+            "serverpath": "{{ OPENOCD_PATH }}",
+            "interface": "swd",
+            "configFiles": [
+                "${workspaceFolder}/platform/cmsis-dap.cfg",
+                "${workspaceFolder}/platform/m0/stm32h7x.cfg"
+            ],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 10
+            }
+            // "postDebugTask": "mcu_reset"
+        },
+        {
+            "name": "🟡🟢 | m0 OpenOCD-CMSIS-Dap attach",
+            "presentation": {
+                "group": "Local"
+            },
+            "type": "cortex-debug",
+            "request": "attach",
+            "executable": "${workspaceFolder}/debug/fw.elf",
+            "svdFile": "${workspaceFolder}/platform/m0/stm32h7x3.svd",
+            "gdbPath": "{{ GDB_PATH }}",
+            "showDevDebugOutput": "raw",
+            "servertype": "openocd",
+            "serverpath": "{{ OPENOCD_PATH }}",
+            "interface": "swd",
+            "configFiles": [
+                "${workspaceFolder}/platform/cmsis-dap.cfg",
+                "${workspaceFolder}/platform/m0/stm32h7x.cfg"
+            ],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 10
+            }
+            // "postDebugTask": "mcu_reset"
+        }
+    ]
+}

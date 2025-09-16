@@ -1,0 +1,88 @@
+{
+    "version": "2.0.0",
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "cmd.exe",
+                "args": [
+                    "/C", "sh"
+                ]
+            }
+        }
+    },
+    "problemMatcher": "$gcc",
+
+    "tasks": [
+        {
+            "label": "❌ | Clean",
+            "type": "shell",
+            "command": "./build/builder.sh",
+            "args": ["clean"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🟢 | Build: app-prd-m0r0c0",
+            "type": "shell",
+            "command": "./build/builder.sh",
+            "args": ["build", "${config:app_prd_m0r0c0}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🟢 | Build: app-dev-m0r0c0",
+            "type": "shell",
+            "command": "./build/builder.sh",
+            "args": ["build", "${config:app_dev_m0r0c0}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🔵 | Elf file size analyse",
+            "type": "shell",
+            "command": "./build/builder.sh",
+            "args": ["elf-size-analyse"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🔵 | Find line by addr",
+            "type": "shell",
+            "command": "arm-none-eabi-addr2line",
+            "args": [
+                "-e", 
+                "debug/fw.elf", 
+                "${input:MemoryAddr}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🔵 | Format project",
+            "type": "shell",
+            "command": "./utils/code-format.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+    ],
+
+    "inputs": [
+        {
+          "id": "MemoryAddr",
+          "type": "promptString",
+          "description": "Required memory addr"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+  "no-duplicate-heading": {
+    "siblings_only": true
+  },
+  "no-hard-tabs": {
+    "spaces_per_tab": 4
+  },
+  "MD013": false,
+  "ignores": ["lib/**"]
+}
