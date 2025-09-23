@@ -1,0 +1,12 @@
+[m0r0c0]
+ref_addr = 0x08000000
+
+[m0r0c0.layout.boot]
+file_pattern = "boot.prd.m0r0c0"
+start_addr = 0x08000000
+size = 0x00010000 # 64K
+
+[m0r0c0.layout.app]
+file_pattern = "app.prd.m0r0c0"
+start_addr = 0x08010000
+size = 0x00080000 # 512K
