@@ -82,12 +82,21 @@ typedef struct {
 extern Pl_IsInit_t Pl_IsInit;
 
 typedef struct {
+	u32 P;
+	u32 Q;
+	u32 R;
+} Pl_Pll_t;
+
+typedef struct {
 	u32 SYSCLK;
 	u32 HCLK;
 	u32 APB1;
 	u32 APB2;
 	u32 APB3;
 	u32 APB4;
+	Pl_Pll_t PLL1;
+	Pl_Pll_t PLL2;
+	Pl_Pll_t PLL3;
 } Pl_SysClock_t;
 
 extern Pl_SysClock_t Pl_SysClk;

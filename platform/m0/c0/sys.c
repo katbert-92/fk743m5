@@ -253,6 +253,31 @@ void Sys_PerifClock_Config(void) {
 	// LL_AHB3_GRP1_EnableClock(LL_AHB3_GRP1_PERIPH_OSPI1); //enabled in platform
 }
 
+Pl_Pll_t Sys_PLL_GetClockFreq(u32 pllNum) {
+	LL_PLL_ClocksTypeDef PLL_Clocks;
+
+	switch (pllNum) {
+		case 1:
+			LL_RCC_GetPLL1ClockFreq(&PLL_Clocks);
+			break;
+		case 2:
+			LL_RCC_GetPLL2ClockFreq(&PLL_Clocks);
+			break;
+		case 3:
+			LL_RCC_GetPLL3ClockFreq(&PLL_Clocks);
+			break;
+		default:
+			PLL_Clocks = (LL_PLL_ClocksTypeDef){0};
+			break;
+	}
+
+	return (Pl_Pll_t){
+		PLL_Clocks.PLL_P_Frequency,
+		PLL_Clocks.PLL_Q_Frequency,
+		PLL_Clocks.PLL_R_Frequency,
+	};
+}
+
 u32* Sys_UID_GetStrAndPtr(char* pDst) {
 	u32* UIDptr = (u32*)UID_BASE;
 	if (pDst)

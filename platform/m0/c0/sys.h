@@ -30,6 +30,7 @@ bool Sys_LSE_IsReadyAndClkSrc(void);
 bool Sys_RealTimeClock_Config(void);
 void Sys_MainClock_Config(void);
 void Sys_PerifClock_Config(void);
+Pl_Pll_t Sys_PLL_GetClockFreq(u32 pllNum);
 
 u32* Sys_UID_GetStrAndPtr(char* pDst);
 void Sys_CPU_GetStrAndPtr(char* pDst);

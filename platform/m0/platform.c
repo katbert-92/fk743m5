@@ -104,6 +104,10 @@ bool Pl_Init(Pl_HardFault_Clbk_t hardFault_Clbk, u32 maxMaskedIntPrio) {
 	Pl_SysClk.APB3	 = RCC_Clocks.PCLK3_Frequency;
 	Pl_SysClk.APB4	 = RCC_Clocks.PCLK4_Frequency;
 
+	Pl_SysClk.PLL1 = Sys_PLL_GetClockFreq(1);
+	Pl_SysClk.PLL2 = Sys_PLL_GetClockFreq(2);
+	Pl_SysClk.PLL3 = Sys_PLL_GetClockFreq(3);
+
 	Pl_IsInit.Hsi48Clk = true;
 	Pl_IsInit.LsiClk   = LL_RCC_LSI_IsReady();
 	Pl_IsInit.LseClk   = LL_RCC_LSE_IsReady();
