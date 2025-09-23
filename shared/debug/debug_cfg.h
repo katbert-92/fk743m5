@@ -30,8 +30,7 @@
 		TaskHandle_t currTaskHdl = xTaskGetCurrentTaskHandle();                           \
 		snprintf(a, b, currTaskHdl ? pcTaskGetName(xTaskGetCurrentTaskHandle()) : "n/a"); \
 	} while (0)
-
-#else /* DnjkjBG_USE_RTOS */
+#else /* DBG_USE_RTOS */
 #define TASK_NAME_STR_SIZE			4
 #define DBG_TASK_NAME_STR_GET(a, b) snprintf(a, b, "n/a")
 #endif /* DBG_USE_RTOS */
