@@ -51,7 +51,7 @@
 .DS_Store
 
 # Build and debug artifacts
-debug/
+/debug/
 
 # Others
 .env
