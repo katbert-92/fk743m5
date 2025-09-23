@@ -1,7 +1,9 @@
 {
     //User defined args
-    "app_prd_m0r0c0": "prj=fk743m5 type=app tag=prd platform=m0r0c0 bsp=0",
-    "app_dev_m0r0c0": "prj=fk743m5 type=app tag=dev platform=m0r0c0 bsp=0",
+    "app_prd_m0r0c0_b0_o1": "prj=fk743m5 type=app tag=prd platform=m0r0c0 bsp=0 opt=1",
+    "app_prd_m0r0c0_b0_o0": "prj=fk743m5 type=app tag=prd platform=m0r0c0 bsp=0 opt=0",
+    "app_dev_m0r0c0_b0_o0": "prj=fk743m5 type=app tag=dev platform=m0r0c0 bsp=0 opt=0",
+    "app_dev_m0r0c0_b0_o1": "prj=fk743m5 type=app tag=dev platform=m0r0c0 bsp=0 opt=1",
 
     "files.associations": {
         "*.h": "c",

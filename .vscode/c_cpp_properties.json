@@ -1,0 +1,86 @@
+{
+    "env": {
+        "allConfigIncludePath": [
+            "${workspaceFolder}/app",
+            "${workspaceFolder}/app/conf",
+            "${workspaceFolder}/app/features",
+            "${workspaceFolder}/app/features/rtos_analyzer",
+            "${workspaceFolder}/app/features/health_check",
+            "${workspaceFolder}/app/shell",
+            "${workspaceFolder}/app/shell/cmd",
+            "${workspaceFolder}/app/storage",
+            "${workspaceFolder}/app/storage/fs_wrapper",
+            "${workspaceFolder}/app/storage/io",
+            "${workspaceFolder}/app/system",
+            "${workspaceFolder}/lib",
+            "${workspaceFolder}/lib/collections",
+            "${workspaceFolder}/lib/collections/linked_list",
+            "${workspaceFolder}/lib/collections/shared_mutex",
+            "${workspaceFolder}/lib/fatfs",
+            "${workspaceFolder}/lib/mathlib",
+            "${workspaceFolder}/lib/rtos",
+            "${workspaceFolder}/lib/rtos/FreeRTOS-KernelV11.2.0",
+            "${workspaceFolder}/lib/rtos/FreeRTOS-KernelV11.2.0/include",
+            "${workspaceFolder}/lib/rtos/FreeRTOS-KernelV11.2.0/portable/GCC/ARM_CM7/r0p1",
+            "${workspaceFolder}/lib/stringlib",
+            "${workspaceFolder}/lib/time_date",
+            "${workspaceFolder}/shared",
+            "${workspaceFolder}/shared/debug",
+            "${workspaceFolder}/thirdparty/wsh-shell/src"
+        ],
+        "allConfigDefines": [
+            "FW_VER_MAJOR",
+            "FW_VER_MINOR",
+            "FW_VER_BUILD",
+            "FW_PROJECT",
+            "FW_TYPE",
+            "FW_TAG",
+            "FW_TAG_PRD",
+            "FW_TAG_DEV",
+            "FW_TAG_QA",
+            "FW_OPT",
+            "FW_PLATFORM",
+            "FW_BSP",
+            "FW_BSP_0",
+            "FW_GIT_HASH",
+            "FW_COMMENT",
+            "FW_NAME",
+            "FW_GIT_BRANCH"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "m0r0c0",
+            "compilerPath": "${config:compiler_path}",
+            "includePath": [
+                "${allConfigIncludePath}",
+                "${workspaceFolder}/platform",
+                "${workspaceFolder}/platform/m0",
+                "${workspaceFolder}/platform/m0/core",
+                "${workspaceFolder}/platform/m0/core/CMSIS",
+                "${workspaceFolder}/platform/m0/core/LL/inc",
+                "${workspaceFolder}/platform/m0/core/HAL/inc",
+                "${workspaceFolder}/platform/m0/usb_device",
+                "${workspaceFolder}/platform/m0/usb_device/Class/CDC/Inc",
+                "${workspaceFolder}/platform/m0/usb_device/Class/MSC/Inc",
+                "${workspaceFolder}/platform/m0/usb_device/Core/Inc",
+                "${workspaceFolder}/platform/m0/c0"
+            ],
+            "defines": [
+                "${allConfigDefines}",
+                "STM32H743xx",
+                "USE_FULL_LL_DRIVER",
+                "USE_FULL_ASSERT",
+                "FW_PLATFORM_M0",
+                "FW_PLATFORM_R0",
+                "FW_PLATFORM_C0",
+                "HSE_VALUE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,26 @@
+# make_user_flags.mk
+
+OPT_LVL :=
+
+ifeq ($(FW_TAG),$(FW_NAME_TAG_PRD))
+    COMPILER_FLAGS += -DFW_TAG_PRD
+else ifeq ($(FW_TAG),$(FW_NAME_TAG_DEV))
+    COMPILER_FLAGS += -DFW_TAG_DEV
+
+    COMPILER_FLAGS += -DDEBUG_ENABLE=1
+    COMPILER_FLAGS += -DPANIC_CHECK_ENABLE=1
+    COMPILER_FLAGS += -DAPP_ASSERT_CHECK_ENABLE=1
+    COMPILER_FLAGS += -DPLATFORM_ASSERT_CHECK_ENABLE=1
+    COMPILER_FLAGS += -DRTOS_ASSERT_CHECK_ENABLE=1
+    COMPILER_FLAGS += -DVIBRO_DISABLE=1
+else
+    $(error FW tag '$(FW_TAG)' is not supported)
+endif
+
+ifeq ($(FW_OPT),)
+    OPT_LVL := -O0
+else
+    OPT_LVL := -O$(FW_OPT)
+endif
+
+CFLAGS := $(OPT_LVL) $(CFLAGS)

@@ -24,20 +24,30 @@
             }
         },
         {
-            "label": "🟢 | Build: app-prd-m0r0c0",
+            "label": "🟢 | Build: app-prd-m0r0c0-b0 O1",
             "type": "shell",
             "command": "./build/builder.sh",
-            "args": ["build", "${config:app_prd_m0r0c0}"],
+            "args": ["build", "${config:app_prd_m0r0c0_b0_o1}"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
         },
         {
-            "label": "🟢 | Build: app-dev-m0r0c0",
+            "label": "🟢 | Build: app-dev-m0r0c0-b0 O0",
             "type": "shell",
             "command": "./build/builder.sh",
-            "args": ["build", "${config:app_dev_m0r0c0}"],
+            "args": ["build", "${config:app_dev_m0r0c0_b0_o0}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🟢 | Build: app-dev-m0r0c0-b0 O1",
+            "type": "shell",
+            "command": "./build/builder.sh",
+            "args": ["build", "${config:app_dev_m0r0c0_b0_o1}"],
             "group": {
                 "kind": "build",
                 "isDefault": true
